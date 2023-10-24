@@ -48,7 +48,9 @@ public class TestFAQList {
             objMainPage.scrollToFAQList();
 
 //            By question = By.id("accordion__heading-" + number);
-            By answer = By.id("accordion__panel-" + number);
+            //By answer = By.id("accordion__panel-" + number);
+            By answer = By.xpath(".//div[@id='accordion__panel-"+ number+"']/p");
+            // [contains(text(),'Сутки — 400 рублей. Оплата курьеру — наличными или картой.')]
 
             //By question = By.xpath(".//div[@class='accordion__button' and text()="+ questionText +"]");
             //By answer = By.id(".//div[@class='accordion__panel']/p[contains(text()," + answerExpected + ")]");
@@ -64,4 +66,4 @@ public class TestFAQList {
     // "accordion__panel-" + number ( или использовать Format )
 
 
-}
+
