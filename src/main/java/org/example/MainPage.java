@@ -18,7 +18,7 @@ public class MainPage {
     public MainPage(WebDriver driver) {
         this.driver = driver;}
 
-
+//
 //  нажатие кнопки "Заказать"
     public void clickOrderButton(){
         driver.findElement(orderButton).click();

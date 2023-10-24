@@ -1,7 +1,8 @@
 package org.example;
 
-
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -23,11 +24,34 @@ public class Main {
 2) перейти по урл
 3) создать экземпляр pageObject'а
 4) получить текст
- */     ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-        driver = new ChromeDriver(options);
+ */     //ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
+        //driver = new ChromeDriver(options);
+
+
+        // !!!!!!! WebDriver driver = new ChromeDriver();
+
         // перешли на страницу тестового приложения
         driver.get("https://qa-scooter.praktikum-services.ru/");
+
+
+        MainPage objMainPage = new MainPage(driver);
+
+
+
+        // открыть страницу заказа
+        // дождаться открытия формы
+        // поочередно ввести данные в форму
+        // нажать кнопку
+        // дождаться открытия второй страницы заказа
+        // заполнить вторуж часть формы
+        // нажать кнопку
+        // дождаться открытия формы подтверждения
+        // нажать кнопку
+
+
+
+
 
 
         }

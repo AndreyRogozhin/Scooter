@@ -10,26 +10,38 @@ public class OrderPage {
     private WebDriver driver;
 
     // локатор имя
-    private By firstName = By.xpath(".//input[@placeholder='* Имя']");
+    private final By firstName = By.xpath(".//input[@placeholder='* Имя']");
 
     // локатор фaмилия
-    private By lastName = By.xpath(".//input[@placeholder='* Фамилия']");
+    private final By lastName = By.xpath(".//input[@placeholder='* Фамилия']");
 
     // локатор адрес
-    private By address = By.xpath(".//input[starts-with(@placeholder,'* Адрес')]");
+    private final By address = By.xpath(".//input[starts-with(@placeholder,'* Адрес')]");
 
     // локатор станция метро
-    private By metroStation = By.xpath(".//input[@placeholder='* Станция метро']");
+    private final By metroStation = By.xpath(".//input[@placeholder='* Станция метро']");
 
     // локатор номер телефона
-    private By phoneNumber = By.xpath(".//input[starts-with(@placeholder='* Телефон']");
+    private final By phoneNumber = By.xpath(".//input[starts-with(@placeholder='* Телефон']");
 
     // локатор кнопка Далее
-    private By orderDataSendButton = By.xpath(".//button[text()='Далее']");
+    private final By orderDataSendButton = By.xpath(".//button[text()='Далее']");
 
     public OrderPage(WebDriver driver) {
         this.driver = driver;
     }
+
+    // заполнение формы - функция с 5 параметрами
+    public void fillOrderForm( String firstName, String lastName, String address, String metroStation, String phoneNumber  ){
+        driver.findElement(this.firstName).sendKeys(firstName);
+        driver.findElement(this.lastName).sendKeys(lastName);
+        // что делать со станцией метро ?
+        driver.findElement(this.address).sendKeys(address);
+        driver.findElement(this.phoneNumber).sendKeys(phoneNumber);
+
+
+    }
+
 
     // нажатие кнопки "Далее"
     public void orderDataSendButtonClick () {
