@@ -32,7 +32,7 @@ public class TestFAQList {
         }
 
 
-    @Parameterized.Parameters(name = "Тест {index}: на вопрос (1) нужно получить ответ (2)")
+    @Parameterized.Parameters(name = "Тест {index}: на вопрос {1} нужно получить ответ {2}")
     public static Object[][] data() {
         return new Object[][] {
                 { 0, "Сколько это стоит? И как оплатить?", "Сутки — 400 рублей. Оплата курьеру — наличными или картой."  },
@@ -47,10 +47,13 @@ public class TestFAQList {
             MainPage objMainPage = new MainPage(driver);
             objMainPage.scrollToFAQList();
 
-            By question = By.id("accordion__heading-" + number);
+//            By question = By.id("accordion__heading-" + number);
             By answer = By.id("accordion__panel-" + number);
 
-            driver.findElement(question).getText(); // не то получается
+            //By question = By.xpath(".//div[@class='accordion__button' and text()="+ questionText +"]");
+            //By answer = By.id(".//div[@class='accordion__panel']/p[contains(text()," + answerExpected + ")]");
+
+            String answerFound = driver.findElement(answer).getText(); // не то получается
             assertEquals("Не тот ответ!", answerExpected, answerFound);
             }
 
