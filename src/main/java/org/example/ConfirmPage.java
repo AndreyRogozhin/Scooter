@@ -1,5 +1,6 @@
 package org.example;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ConfirmPage {
@@ -9,9 +10,14 @@ public class ConfirmPage {
 //    в Хроме не нажимается кнопка на форме  подтверждения
 
     private WebDriver driver;
+    private final By confirmButton = By.xpath(".//button[text()='Да']");
 
     public ConfirmPage(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public void clickConfirmButton(){
+        driver.findElement(confirmButton).click();
     }
 //
 
