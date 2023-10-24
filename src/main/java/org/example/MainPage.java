@@ -1,7 +1,9 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class MainPage {
     private WebDriver driver;
@@ -18,6 +20,7 @@ public class MainPage {
     public MainPage(WebDriver driver) {
         this.driver = driver;}
 
+
 //
 //  нажатие кнопки "Заказать"
     public void clickOrderButton(){
@@ -30,5 +33,5 @@ public class MainPage {
 
 
 
-    //  прокрутка до вопросов
+
 }

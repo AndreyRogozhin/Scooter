@@ -1,6 +1,9 @@
 package org.example;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
@@ -29,13 +32,14 @@ public class Main {
         //driver = new ChromeDriver(options);
 
 
-        // !!!!!!! WebDriver driver = new ChromeDriver();
+       WebDriver driver = new ChromeDriver();
 
         // перешли на страницу тестового приложения
         driver.get("https://qa-scooter.praktikum-services.ru/");
 
 
         MainPage objMainPage = new MainPage(driver);
+
 
 
 
@@ -49,7 +53,9 @@ public class Main {
         // дождаться открытия формы подтверждения
         // нажать кнопку
 
-
+// прокрутить до вопросов о важном
+        WebElement element = driver.findElement(By.className("Home_FAQ__3uVm4"));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",element);
 
 
 

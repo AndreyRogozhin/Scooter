@@ -31,6 +31,12 @@ public class OrderPage {
         this.driver = driver;
     }
 
+//    public void  setFirstName (String firstName){driver.findElement(this.firstName).sendKeys(firstName)}
+//    public void  setFirstName (String lastName){driver.findElement(this.lastName).sendKeys(lastName)}
+//    public void  setFirstName (String address){driver.findElement(this.address).sendKeys(address)}
+//    public void  setFirstName (String phoneNumber){driver.findElement(this.phoneNumber).sendKeys(phoneNumber)}
+
+
     // заполнение формы - функция с 5 параметрами
     public void fillOrderForm( String firstName, String lastName, String address, String metroStation, String phoneNumber  ){
         driver.findElement(this.firstName).sendKeys(firstName);
