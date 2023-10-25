@@ -19,10 +19,12 @@ public class OrderPage {
     private final By address = By.xpath(".//input[starts-with(@placeholder,'* Адрес')]");
 
     // локатор станция метро
+    //private String  metroStationName;
+    //private By metroStation;
     private final By metroStation = By.xpath(".//input[@placeholder='* Станция метро']");
 
     // локатор номер телефона
-    private final By phoneNumber = By.xpath(".//input[starts-with(@placeholder='* Телефон']");
+    private final By phoneNumber = By.xpath(".//input[starts-with(@placeholder,'* Телефон')]");
 
     // локатор кнопка Далее
     private final By orderDataSendButton = By.xpath(".//button[text()='Далее']");
@@ -31,23 +33,32 @@ public class OrderPage {
         this.driver = driver;
     }
 
-//    public void  setFirstName (String firstName){driver.findElement(this.firstName).sendKeys(firstName)}
-//    public void  setFirstName (String lastName){driver.findElement(this.lastName).sendKeys(lastName)}
-//    public void  setFirstName (String address){driver.findElement(this.address).sendKeys(address)}
-//    public void  setFirstName (String phoneNumber){driver.findElement(this.phoneNumber).sendKeys(phoneNumber)}
+    public void  setFirstName (String firstName){driver.findElement(this.firstName).sendKeys(firstName);}
+    public void  setLastName (String lastName){driver.findElement(this.lastName).sendKeys(lastName);}
+    public void  setMetroStation (String metroStation){driver.findElement(this.metroStation).sendKeys(metroStation);}
+    /*public void  setMetroStation (String metroStation){
+        this.metroStationName = metroStation;
+        this.metroStation =  By.xpath(".//input[@placeholder='* Станция метро' and @value='"+metroStationName+"']");
+        driver.findElement(this.metroStation).click();
+    }*/
+
+    public void  setAddress (String address){driver.findElement(this.address).sendKeys(address);}
+    public void  setPhoneNumber (String phoneNumber){driver.findElement(this.phoneNumber).sendKeys(phoneNumber);}
 
 
-    // заполнение формы - функция с 5 параметрами
     public void fillOrderForm( String firstName, String lastName, String address, String metroStation, String phoneNumber  ){
-        driver.findElement(this.firstName).sendKeys(firstName);
+     /*   driver.findElement(this.firstName).sendKeys(firstName);
         driver.findElement(this.lastName).sendKeys(lastName);
         // что делать со станцией метро ?
         driver.findElement(this.address).sendKeys(address);
         driver.findElement(this.phoneNumber).sendKeys(phoneNumber);
-
-
+*/
+        setFirstName(firstName);
+        setLastName(lastName);
+        setAddress(address);
+        setMetroStation(metroStation);
+        setPhoneNumber(phoneNumber);
     }
-
 
     // нажатие кнопки "Далее"
     public void orderDataSendButtonClick () {

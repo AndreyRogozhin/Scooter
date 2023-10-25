@@ -17,15 +17,21 @@ public class MainPage {
    //раздел "Вопросы о важном"  - локатор раздела
    private final By FAQlist = By.className("Home_FAQ__3uVm4");
 
-    public MainPage(WebDriver driver) {
+   public MainPage(WebDriver driver) {
         this.driver = driver;}
 
 
 //
 //  нажатие кнопки "Заказать"
-    public void clickOrderButton(){
+   public void clickOrderButton(){
         driver.findElement(orderButton).click();
     }
+
+   // прокрутить до вопросов о важном
+   public void scrollToFAQList(){
+       WebElement element = driver.findElement(FAQlist);
+       ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",element);
+   }
 
 
 

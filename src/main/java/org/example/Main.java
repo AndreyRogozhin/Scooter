@@ -6,14 +6,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+//public class Praktikum {
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
+//@Test
+//public void TestOrder()  {
 
-    private WebDriver driver;
+    //private WebDriver driver;
 
-    public void main(String[] args) {
+    //TestOrder testOrder = new TestOrder();
+
+    //public void main(String[] args) {
         //открыть страницу
         //прокрутить до списка вопросов
         //перейти к списку вопросов
@@ -32,14 +34,10 @@ public class Main {
         //driver = new ChromeDriver(options);
 
 
-       WebDriver driver = new ChromeDriver();
+   //    driver = new ChromeDriver();
 
         // перешли на страницу тестового приложения
-        driver.get("https://qa-scooter.praktikum-services.ru/");
-
-
-        MainPage objMainPage = new MainPage(driver);
-
+   //     driver.get("https://qa-scooter.praktikum-services.ru/");
 
 
 
@@ -53,12 +51,19 @@ public class Main {
         // дождаться открытия формы подтверждения
         // нажать кнопку
 
-// прокрутить до вопросов о важном
-        WebElement element = driver.findElement(By.className("Home_FAQ__3uVm4"));
+ //   MainPage objMainPage = new MainPage(driver);
+  //  objMainPage.
+
+
+
+    // прокрутить до вопросов о важном
+      /*  WebElement element = driver.findElement(By.className("Home_FAQ__3uVm4"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",element);
 
+       */
 
 
 
-        }
-    }
+
+    //    }
+  //  }

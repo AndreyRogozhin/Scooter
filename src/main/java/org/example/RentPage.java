@@ -20,7 +20,6 @@ public class RentPage {
     // локатор комментарий
     private final By comment = By.xpath(".//input[@placeholder='Комментарий для курьера']");
 
-
     // локатор кнопка Заказать
     private final By rentDataSendButton = By.xpath(".//button[text()='Заказать']");
 
@@ -28,14 +27,29 @@ public class RentPage {
         this.driver = driver;
     }
 
+
+    public void  setDateStart (String dateStart){driver.findElement(this.dateStart).sendKeys(dateStart);}
+    public void  setDateEnd   (String dateEnd){driver.findElement(this.dateEnd).sendKeys(dateEnd);}
+    public void  setColor    (String color){driver.findElement(this.color).sendKeys(color);}
+    public void  setComment (String comment){driver.findElement(this.comment).sendKeys(comment);}
+
+
     // заполнение формы - функция с 5 параметрами
-    public void fillOrderForm( String dateStart, String dateEnd, String color, String comment  ) {
+    public void fillRentForm( String dateStart, String dateEnd, String color, String comment  ) {
+        /*
         driver.findElement(this.dateStart).sendKeys(dateStart);
         driver.findElement(this.dateEnd).sendKeys(dateEnd);
         // что делать со станцией метро ?
         driver.findElement(this.color).sendKeys(color);
         driver.findElement(this.comment).sendKeys(comment);
+        */
+        setDateStart(dateStart);
+        setDateEnd(dateEnd);
+        setColor(color);
+        setComment (comment);
+
     }
+
 
 
 
