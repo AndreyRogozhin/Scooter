@@ -6,12 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Praktikum {
+//public class Praktikum {
 
-@Test
-public void TestOrder()  {
+//@Test
+//public void TestOrder()  {
 
-    private WebDriver driver;
+    //private WebDriver driver;
 
     //TestOrder testOrder = new TestOrder();
 
@@ -34,10 +34,10 @@ public void TestOrder()  {
         //driver = new ChromeDriver(options);
 
 
-       driver = new ChromeDriver();
+   //    driver = new ChromeDriver();
 
         // перешли на страницу тестового приложения
-        driver.get("https://qa-scooter.praktikum-services.ru/");
+   //     driver.get("https://qa-scooter.praktikum-services.ru/");
 
 
 
@@ -51,8 +51,8 @@ public void TestOrder()  {
         // дождаться открытия формы подтверждения
         // нажать кнопку
 
-    MainPage objMainPage = new MainPage(driver);
-    objMainPage.
+ //   MainPage objMainPage = new MainPage(driver);
+  //  objMainPage.
 
 
 
@@ -65,5 +65,5 @@ public void TestOrder()  {
 
 
 
-        }
-    }
+    //    }
+  //  }

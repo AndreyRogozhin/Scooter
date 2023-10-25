@@ -2,6 +2,10 @@ package org.example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import static org.openqa.selenium.Keys.ARROW_DOWN;
+import static org.openqa.selenium.Keys.ENTER;
 
 public class OrderPage {
     //OrderPage, на ней есть заголовок, форма заказа и кнопка "Далее"
@@ -19,10 +23,12 @@ public class OrderPage {
     private final By address = By.xpath(".//input[starts-with(@placeholder,'* Адрес')]");
 
     // локатор станция метро
+    //private String  metroStationName;
+    //private By metroStation;
     private final By metroStation = By.xpath(".//input[@placeholder='* Станция метро']");
 
     // локатор номер телефона
-    private final By phoneNumber = By.xpath(".//input[starts-with(@placeholder='* Телефон']");
+    private final By phoneNumber = By.xpath(".//input[starts-with(@placeholder,'* Телефон')]");
 
     // локатор кнопка Далее
     private final By orderDataSendButton = By.xpath(".//button[text()='Далее']");
@@ -33,9 +39,8 @@ public class OrderPage {
 
     public void  setFirstName (String firstName){driver.findElement(this.firstName).sendKeys(firstName);}
     public void  setLastName (String lastName){driver.findElement(this.lastName).sendKeys(lastName);}
-    public void  setMetroStation (String metroStation){
-        driver.findElement(this.lastName).sendKeys(metroStation);
-    }
+    public void  setMetroStation (String metroStation){ driver.findElement(this.metroStation).sendKeys(metroStation +ARROW_DOWN + ENTER ); }
+
     public void  setAddress (String address){driver.findElement(this.address).sendKeys(address);}
     public void  setPhoneNumber (String phoneNumber){driver.findElement(this.phoneNumber).sendKeys(phoneNumber);}
 
@@ -49,8 +54,8 @@ public class OrderPage {
 */
         setFirstName(firstName);
         setLastName(lastName);
-        setMetroStation(metroStation);
         setAddress(address);
+        setMetroStation(metroStation);
         setPhoneNumber(phoneNumber);
     }
 

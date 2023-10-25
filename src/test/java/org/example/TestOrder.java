@@ -1,6 +1,8 @@
 package org.example;
 
+import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +15,7 @@ public class TestOrder{
 
     @Before
     public void setDriver() {
-        // Закрой браузер
+
         driver = new ChromeDriver();
         // перешли на страницу тестового приложения
         driver.get("https://qa-scooter.praktikum-services.ru/");
@@ -39,11 +41,11 @@ public class TestOrder{
         objMainPage.clickOrderButton();
 
 // дождаться открытия страницы
-        objOrderPage.fillOrderForm("Антон", "Сергеев", "Москва, Лесная, 21", "Белорусская", "+79990001122")
+        objOrderPage.fillOrderForm("Антон", "Сергеев", "Москва, Лесная, 21", "Белорусская", "+79990001122");
         objOrderPage.orderDataSendButtonClick();
 
         // дождаться открытия страницы
-        objRentPage.fillRentForm("date1", "date2", "серый", "Нет никаких комментариев");
+        objRentPage.fillRentForm("02.05.2015", "трое суток", "black", "Нет никаких комментариев");
         objRentPage.rentDataSendButtonClick();
 
         // дождаться открытия страницы
@@ -57,4 +59,4 @@ public class TestOrder{
         driver.quit();
     }
 }
-}
+
